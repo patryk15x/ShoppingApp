@@ -3,13 +3,13 @@ package com.company.sortedcollections.challenge;
 public class StockItem implements Comparable<StockItem> {
     private final String name;
     private double price;
-    private int quantityInStock = 0; //can be initialized later
+    private int quantityInStock;
     private int reserved = 0;
 
     public StockItem(String name, double price) {
         this.name = name;
         this.price = price;
-        this.quantityInStock = 0; //or here (but you wouldn't normally do both).
+        this.quantityInStock = 0;
     }
 
     public StockItem(String name, double price, int quantityInStock) {
