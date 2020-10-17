@@ -47,27 +47,55 @@ public class Main {
             System.out.println("There are no more cars in stock");
         }
         sellItem(adasBasket, "spanner", 5);
-        System.out.println(adasBasket);
+//        System.out.println(adasBasket);
 
         sellItem(adasBasket, "car", 1);
-        System.out.println(adasBasket);
+//        System.out.println(adasBasket);
 
         sellItem(adasBasket, "juice", 4);
         sellItem(adasBasket,"cup", 12);
         sellItem(adasBasket, "bread", 1);
+//        System.out.println(adasBasket);
+
+        Basket basket = new Basket("customer");
+        sellItem(basket,"cup", 100);
+        sellItem(basket, "juice", 5);
+        removeItem(basket, "cup", 1);
+        System.out.println(basket);
+
+        removeItem(adasBasket, "car",1);
+        removeItem(adasBasket, "cup", 9);
+        removeItem(adasBasket, "car", 1);
+        System.out.println("cars removed: " + removeItem(adasBasket, "car", 1)); //should not remove any
         System.out.println(adasBasket);
 
+        //remove all items from adasBasket
+        removeItem(adasBasket, "bread",1);
+        removeItem(adasBasket, "cup",3);
+        removeItem(adasBasket, "juice",4);
+        removeItem(adasBasket, "cup",3);
+        System.out.println(adasBasket);
+
+        System.out.println("\nDisplay stock list before and after checkout");
+        System.out.println(basket);
         System.out.println(stockList);
+        checkOut(basket);
+        System.out.println(basket);
+        System.out.println(stockList);
+
+//        System.out.println(stockList);
 
 //        temp = new StockItem("pen", 1.12);
 //        stockList.Items().put(temp.getName(), temp);
         stockList.Items().get("car").adjustStock(2000);
         stockList.get("car").adjustStock(-1000);
         System.out.println(stockList);
-        for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()){
-            System.out.println(price.getKey() + " costs " + price.getValue());
-        }
+//        for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()){
+//            System.out.println(price.getKey() + " costs " + price.getValue());
+//        }
 
+        checkOut(adasBasket);
+        System.out.println(adasBasket);
     }
 
     public static int sellItem(Basket basket, String item, int quantity){

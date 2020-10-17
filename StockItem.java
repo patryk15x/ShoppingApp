@@ -68,24 +68,24 @@ public class StockItem implements Comparable<StockItem> {
         return 0;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        System.out.println("Entering StockItem.equals");
-        if (obj == this){
-            return true;
-        }
-        if ((obj == null) || (obj.getClass() != this.getClass())){
-            return false;
-        }
-
-        String objName = ((StockItem) obj).getName();
-        return this.name.equals(objName);
-    }
-
-    @Override
-    public int hashCode() {
-        return this.name.hashCode() + 31;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        System.out.println("Entering StockItem.equals");
+//        if (obj == this){
+//            return true;
+//        }
+//        if ((obj == null) || (obj.getClass() != this.getClass())){
+//            return false;
+//        }
+//
+//        String objName = ((StockItem) obj).getName();
+//        return this.name.equals(objName);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return this.name.hashCode() + 31;
+//    }
 
     @Override
     public int compareTo(StockItem o) {
